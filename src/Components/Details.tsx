@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import Cards from "./Cards";
 import { list } from "../data";
 import { FaSearch } from "react-icons/fa";
 
-interface CartItem {
- id: string;
- img: string;
- name: string;
- amount: number;
- price: number;
-}
+// interface CartItem {
+//  id: string;
+//  img: string;
+//  name: string;
+//  amount: number;
+//  price: number;
+// }
 
 interface DetailsProps {
+ // eslint-disable-next-line @typescript-eslint/no-explicit-any
  handleClick: (item: any) => void;
 }
 
@@ -56,7 +57,7 @@ function Details({ handleClick }: DetailsProps) {
              onClick={() => handleBtns("All")}
              className={`mr-2 text-brandColor border-brandColor border-2 py-1 px-6 md:w-24 h-10 rounded-lg text-lg ${
                activeTab === "All"
-                 ? "bg-brandColor outline-none text-white"
+                 ? "bg-yellow-300 outline-none"
                  : ""
              }`}
            >
@@ -67,7 +68,7 @@ function Details({ handleClick }: DetailsProps) {
              onClick={() => handleBtns("African")}
              className={`mr-2 text-brandColor border-brandColor border-2 py-1 px-6 md:w-24 h-10 rounded-lg text-lg ${
                activeTab === "African"
-                 ? "bg-brandColor outline-none text-white"
+                 ? "bg-yellow-300 outline-none"
                  : ""
              }`}
            >
@@ -78,7 +79,7 @@ function Details({ handleClick }: DetailsProps) {
              onClick={() => handleBtns("American")}
              className={`mr-2 text-brandColor border-brandColor border-2 py-1 md:w-24 h-10 rounded-lg text-lg ${
                activeTab === "American"
-                 ? "bg-brandColor outline-none text-white"
+                 ? "bg-yellow-300 outline-none"
                  : ""
              }`}
            >
@@ -89,7 +90,7 @@ function Details({ handleClick }: DetailsProps) {
              onClick={() => handleBtns("Chinese")}
              className={`mr-2 text-brandColor border-brandColor border-2 py-1 md:w-24 h-10 rounded-lg text-lg ${
                activeTab === "Chinese"
-                 ? "bg-brandColor outline-none text-white"
+                 ? "bg-yellow-300 outline-none"
                  : ""
              }`}
            >

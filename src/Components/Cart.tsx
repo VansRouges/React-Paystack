@@ -18,7 +18,6 @@ interface CartProps {
  handleChange: (item: CartItem, value: number) => void;
 }
 
-const apiKey = process.env.REACT_APP_API_KEY
 
 const Cart = ({ cart, setCart, handleChange }: CartProps) => {
  const [price, setPrice] = useState(0);
@@ -53,12 +52,16 @@ const Cart = ({ cart, setCart, handleChange }: CartProps) => {
  const config = {
    reference: (new Date()).getTime().toString(),
    email: "freeguilders@gmail.com",
-   publicKey: apiKey,
+   publicKey: "pk_test_75a31e90ccb8cc871342d1baeef987eaae4b36c3",
  };
 
- const onSuccess = (reference: any) => {
-   toast.success("Payment successfully completed");
- };
+ const onSuccess = (reference: any,) => {
+  toast.success("Payment successfully completed");
+  // Clear the cart and refresh the page
+  setCart([]);
+  window.location.reload(); // Reload the page
+};
+
 
  const onClose = () => {
    toast.error("Your payment was unsuccessful, try again later!");
@@ -113,7 +116,12 @@ const Cart = ({ cart, setCart, handleChange }: CartProps) => {
                <span className="text-lg font-semibold text-brandColor">  ${price}</span>
              </div>
              <section className="flex justify-between mt-12">
-               <button onClick={() => initializePayment(onSuccess as any, onClose)} className="bg-brandColor text-white py-2 px-4 text-lg w-full rounded-xl hover:border-2 hover:bg-white hover:text-brandColor hover:border-brandColor">Checkout</button>
+               <button 
+                onClick={() => initializePayment(onSuccess as any, onClose)} 
+                className="bg-yellow-400 py-2 px-4 text-lg w-full rounded-xl hover:border-2 hover:bg-white hover:text-brandColor hover:border-yellow-400"
+              >
+                Checkout
+              </button>
              </section>
            </>
          )}

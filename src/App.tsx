@@ -38,7 +38,7 @@ const App = () => {
 
  return (
    <>
-     <section className="flex flex-col px-2 pt-8 w-full bg-bgColor">
+     <section className="flex flex-col w-full bg-bgColor">
        <React.Fragment>
          <TopSect setShow={setShow} size={cart.length} />
          {show ? (

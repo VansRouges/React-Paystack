@@ -26,10 +26,10 @@ interface Item {
               <div className="px-3 py-2">
                 <h1 className="text-xl font-bold mb-3">{name}</h1>
                 <div className="flex flex-wrap justify-between mb-2 mt-4">
-                  <p className="leading-relaxed mt-4 text-lg">Price: ${price}</p>
+                  <p className="leading-relaxed mt-4 text-lg">Price: ₦{price}</p>
                   <button
                     onClick={() => handleClick(item)}
-                    className="bg-brandColor text-white py-2 px-3 text-lg rounded-xl hover:border-2 hover:bg-white hover:text-brandColor hover:border-brandColor"
+                    className="bg-yellow-400 py-2 px-2 text-white rounded hover:border-2 hover:bg-white hover:text-yellow-400 hover:border-brandColor"
                   >
                     Add to Cart
                   </button>
